@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+	<ui:define name="title">Simple Blog</ui:define>
+	<ui:define name="content">
+	    <div id="home">
+		    <div class="posts">
+		        <nav class="art-list">
+					<ul class="art-list-body">
+						<li class="art-list-item">
+							<div class="art-list-item-title-and-time">
+								<h2 class="art-list-title"><a href="post.php?id=1">Post 1</a></h2>
+								<div class="art-list-time">20 November 2014</div>
+							</div>
+							<p>Lorem ipsum et dolorem &hellip;<a href="post.php?id=1">Read More</a></p>
+							<p>
+							<a href="edit.php?id=1">Edit</a> | <a href="proc.php?x=3&amp;id=1">Hapus</a>
+							</p>
+						</li>
+						<li class="art-list-item">
+							<div class="art-list-item-title-and-time">
+								<h2 class="art-list-title"><a href="new_post.php">Invalid Page</a></h2>
+							</div>
+							<p>There is no post here yet!<br/><br/>Why don't you fill it until it reach here?</p>
+						</li>
+						<li class="art-list-item">
+							<div class="art-list-item-title-and-time">
+								<h2 class="art-list-title"><a href="new_post.php">Empty Blog!</a></h2>
+							</div>
+							<p>There is no post yet!<br/><br/>Create a post and fill this blog to your heart's content!</p>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
