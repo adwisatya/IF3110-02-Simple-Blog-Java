@@ -5,15 +5,18 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
+<f:metadata>
+<f:viewParam name="id" value="#{postBean.id}"/>
+</f:metadata>
 
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
-	<ui:define name="title">Simple Blog | Apa itu Simple Blog?</ui:define>
+	<ui:define name="title"><h:outputText value="Simple Blog | #{postBean.judul}"/></ui:define>
 	<ui:define name="content">
 	    <article class="art simple post">
 		    <header class="art-header">
 		        <div class="art-header-inner" style="margin-top: 0px; opacity: 1;">
-		            <time class="art-time">20 November 2014</time>
-		            <h2 class="art-title">Apa itu Simple Blog?</h2>
+		            <time class="art-time"><h:outputText value="#{postBean.tanggal}"/></time>
+		            <h2 class="art-title"><h:outputText value="#{postBean.judul}"/></h2>
 		            <p class="art-subtitle"></p>
 		        </div>
 		    </header>
@@ -21,12 +24,12 @@
 		    <div class="art-body">
 		        <div class="art-body-inner">
 		            <hr class="featured-article" />
-		            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis aliquam minus consequuntur amet nulla eius, neque beatae, nostrum possimus, officiis eaque consectetur. Sequi sunt maiores dolore, illum quidem eos explicabo! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam consequuntur consequatur molestiae saepe sed, incidunt sunt inventore minima voluptatum adipisci hic, est ipsa iste. Nobis, aperiam provident quae. Reprehenderit, iste.</p>
-		            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores animi tenetur nam delectus eveniet iste non culpa laborum provident minima numquam excepturi rem commodi, officia accusamus eos voluptates obcaecati. Possimus?</p>
-		
+		            <h:outputText value="#{postBean.DisplayContent()}" escape="false"/>
 		            <hr/>
 					<p>
-					<a href="edit.php?id=1">Edit</a> | <a href="proc.php?x=3&amp;id=1">Hapus</a>
+					<h:link value="Edit" outcome="edit.xhtml"><f:param name="id" value="#{postBean.id}"/></h:link>
+					 | 
+					<h:link value="Hapus" outcome="index.xhtml"><f:param name="id" value="#{postBean.id}"/></h:link>
 					</p>
 		            
 					<a name="comment"></a>
@@ -35,17 +38,17 @@
 					<div id="contact-area">
 						<h:form>
 							<label for="Nama">Nama:</label>
-							<h:inputText value="#{loginBean.commentname}"/>
+							<h:inputText value=""/>
 							
 							<label for="Email">Email:</label>
-							<h:inputText value="#{loginBean.Email}"/>
+							<h:inputText value=""/>
 							
 							<label for="Komentar">Komentar:</label><br/>
-							<h:inputTextarea rows="20" cols="20" value="#{loginBean.comment}"/>
+							<h:inputTextarea rows="20" cols="20" value=""/>
 							
 							<h:inputHidden value="1"/>
 							
-							<h:commandButton class="submit-button" value="Kirim" action="add_comment"/>
+							<h:commandButton class="submit-button" value="Kirim"/>
 						</h:form>
 					</div>
 					<a onclick="LoadComment(1);">refresh</a>

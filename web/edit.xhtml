@@ -5,7 +5,9 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-
+<f:metadata>
+<f:viewParam name="id" value="#{postBean.id}"/>
+</f:metadata>
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
 	<ui:define name="title">Simple Blog | Edit Post</ui:define>
 	<ui:define name="content">
@@ -17,15 +19,15 @@
 		            <div id="contact-area">
 		                <h:form>
 		                	<label for="Judul">Judul:</label>
-		                    <h:inputText value="Judul"/>
+		                    <h:inputText value="#{postBean.judul}" binding="#{judul}"/>
 							
 							<label for="Tanggal">Tanggal:</label>
-		                    <h:inputText value="Pass"/>
+		                    <h:inputText value="#{postBean.tanggal}" binding="#{tanggal}"/>
 							
 							<label for="Konten">Konten:</label><br/>
-		                    <h:inputTextarea rows="20" cols="20" value="lorem ipsum"/>
+		                    <h:inputTextarea rows="20" cols="20" value="#{postBean.konten}" binding="#{konten}"/>
 							
-							<h:commandButton class="submit-button" value="Simpan" action="login"/>
+							<h:commandButton class="submit-button" value="Simpan" outcome="post.xhtml" action="#{postBean.EditPost(postBean.id,judul.value,tanggal.value,konten.value)}"/>
 						</h:form>
 		            </div>
 		        </div>

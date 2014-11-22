@@ -17,15 +17,15 @@
 		            <div id="contact-area">
 		                <h:form>
 		                	<label for="Judul">Judul:</label>
-		                    <h:inputText value="#{loginBean.name}"/>
+		                    <h:inputText binding="#{judul}"/>
 							
 							<label for="Tanggal">Tanggal:</label>
-		                    <h:inputText value="#{loginBean.password}"/>
+		                    <h:inputText binding="#{tanggal}"/>
 							
 							<label for="Konten">Konten:</label><br/>
-		                    <h:inputTextarea rows="20" cols="20" value="#{loginBean.content}"/>
+		                    <h:inputTextarea rows="20" cols="20" binding="#{konten}"/>
 							
-							<h:commandButton class="submit-button" value="Simpan" action="login"/>
+							<h:commandButton class="submit-button" value="Simpan" action="#{postBean.NewPost(judul.value,tanggal.value,konten.value)}"/>
 						</h:form>
 		            </div>
 		        </div>
