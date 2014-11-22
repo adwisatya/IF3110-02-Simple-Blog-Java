@@ -1,0 +1,5 @@
+todo:
+- Buat validasi untuk tanggal
+- Hilangin tag html untuk judul
+- Buat comment
+- Buat login
