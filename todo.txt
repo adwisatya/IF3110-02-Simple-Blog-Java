@@ -3,3 +3,19 @@ todo:
 - Hilangin tag html untuk judul
 - Buat comment
 - Buat login
+- Benerin header sama footer
+
+note:
+- Kebanyakan page pake template
+template ada di:
+web\WEB-INF\templates\
+
+header sama footer juga ada disitu
+kalau pengen edit header/footer, yang disana aja, otomatis keganti semua
+Pengen ganti layout juga
+
+- Semua pake xhtml, tapi sebenernya di-rename jadi jsp, trus tambahin jsp didalemnya juga bisa. Asal line :
+<!DOCTYPE html ...
+<html xmlns ...
+
+gak diubah, seharusnya bisa.
